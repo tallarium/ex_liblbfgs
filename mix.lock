@@ -1,0 +1,3 @@
+%{
+  "liblbfgs": {:git, "https://github.com/chokkan/liblbfgs.git", "05bdaad9d8ac44f7f9bfd242457da100bd8a8915", []},
+}
