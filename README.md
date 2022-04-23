@@ -1,6 +1,24 @@
 # ExLiblbfgs
 
-**TODO: Add description**
+Wrapper around [liblbfgs](https://github.com/chokkan/liblbfgs) for Elixir.
+
+## Prerequisites
+
+You will need:
+
+```
+make
+automake
+libtool
+```
+
+for your platform.
+
+On Mac, libtoolize is installed as glibtoolsize. You can address the build issue here by running:
+
+```
+ln -s /usr/local/bin/glibtoolize /usr/local/bin/libtoolize
+```
 
 ## Installation
 
