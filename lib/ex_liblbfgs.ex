@@ -1,18 +1,14 @@
 defmodule ExLiblbfgs do
   @moduledoc """
-  Documentation for `ExLiblbfgs`.
+  Wrapper around the liblbfgs library
   """
 
-  @doc """
-  Hello world.
+  @on_load { :init, 0 }
 
-  ## Examples
+  app = Mix.Project.config[:app]
 
-      iex> ExLiblbfgs.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def init do
+    path = :filename.join(:code.priv_dir(unquote(app)), 'liblbfgs')
+    :ok = :erlang.load_nif(path, 0)
   end
 end

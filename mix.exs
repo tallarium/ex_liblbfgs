@@ -1,3 +1,11 @@
+defmodule Mix.Tasks.Compile.Liblbfgs do
+  def run(_) do
+    {result, _error_code} = System.cmd("make", ["-f", "Makefile.liblbfgs"], stderr_to_stdout: true)
+    IO.binwrite result
+    :ok
+  end
+end
+
 defmodule ExLiblbfgs.MixProject do
   use Mix.Project
 
@@ -7,6 +15,7 @@ defmodule ExLiblbfgs.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
+      compilers: [:liblbfgs, :elixir, :app],
       deps: deps()
     ]
   end
